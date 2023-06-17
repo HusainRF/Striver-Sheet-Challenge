@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+
+int findDuplicate(vector<int> &nums, int n){
+	// Write your code her
+
+        for(int i = 0 ;i < n ;i++){
+            while( nums[i] != i+1 ){
+                
+                if(nums[nums[i]-1] == nums[i])
+                    return nums[i];
+                
+                swap(nums[i] , nums[nums[i]-1]);
+            }
+            
+        }
+        return 1;
+}
+
+// Time complexity : O(n) but modifing the array 
+// hare and tortoise algo can also be used here 
